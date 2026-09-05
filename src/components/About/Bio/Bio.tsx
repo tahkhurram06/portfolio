@@ -15,9 +15,7 @@ export default function Bio() {
           <span className="absolute bottom-[-3px] left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-violet-200 shadow-[0_0_8px_2px_rgba(233,213,255,0.7)]" />
         </div>
 
-        <div
-          className="relative aspect-square w-[60%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(168,85,247,0.35),0_0_100px_rgba(168,85,247,0.15)] transition-transform duration-500 hover:scale-[1.04]"
-        >
+        <div className="relative aspect-square w-[60%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(168,85,247,0.35),0_0_100px_rgba(168,85,247,0.15)] transition-transform duration-500 hover:scale-[1.04]">
           <Image
             src={HeroImg}
             alt="Taha"
@@ -30,7 +28,10 @@ export default function Bio() {
       </div>
 
       <div className="animate-fade-up animate-delay-1 max-w-full min-[801px]:max-w-[520px]">
-        <p className="mb-2.5 text-sm font-semibold" style={{ color: "var(--accent)" }}>
+        <p
+          className="mb-2.5 text-sm font-semibold"
+          style={{ color: "var(--accent)" }}
+        >
           About me
         </p>
 
@@ -39,13 +40,13 @@ export default function Bio() {
         </h1>
 
         <p
-          className="mx-auto text-[16px] leading-relaxed min-[801px]:mx-0"
+          className="mx-auto text-[19px] leading-relaxed min-[801px]:mx-0"
           style={{ color: "var(--muted)" }}
         >
           I&apos;m Taha, a self-taught frontend developer who learns by shipping
-          real projects rather than tutorials. I care about interfaces that
-          feel considered — smooth motion, clear hierarchy, no dead ends —
-          and I&apos;m currently deepening into full-stack work.
+          real projects rather than tutorials. I care about interfaces that feel
+          considered — smooth motion, clear hierarchy, no dead ends — and
+          I&apos;m currently deepening into full-stack work.
         </p>
       </div>
     </div>
