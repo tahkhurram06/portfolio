@@ -17,7 +17,8 @@ export default function TimelineItem({
         className="absolute top-1 -left-[29px] block h-3 w-3 rounded-full transition-transform duration-300 group-hover:scale-125 sm:-left-[33px]"
         style={{
           backgroundColor: "var(--accent)",
-          boxShadow: "0 0 12px 2px color-mix(in srgb, var(--accent) 55%, transparent)",
+          boxShadow:
+            "0 0 12px 2px color-mix(in srgb, var(--accent) 55%, transparent)",
         }}
       />
 
@@ -34,7 +35,7 @@ export default function TimelineItem({
         {title}
       </p>
       <p
-        className="max-w-[560px] text-[14.5px] leading-relaxed"
+        className="max-w-[560px] text-[14.5px] leading-relaxed min-[801px]:text-[21px]"
         style={{ color: "var(--muted)" }}
       >
         {description}
