@@ -10,8 +10,20 @@ type ProjectCardProps = {
   compact?: boolean;
 };
 
-export default function ProjectCard({ project, compact = false }: ProjectCardProps) {
-  const { title, description, tags, href, githubHref, image, gradient, labelColor } = project;
+export default function ProjectCard({
+  project,
+  compact = false,
+}: ProjectCardProps) {
+  const {
+    title,
+    description,
+    tags,
+    href,
+    githubHref,
+    image,
+    gradient,
+    labelColor,
+  } = project;
 
   const card = (
     <div className="relative h-full overflow-hidden rounded-2xl border border-(--surface-border) bg-(--surface-bg) transition-all duration-250 hover:-translate-y-1 hover:border-(--surface-border-hover) hover:bg-(--surface-bg-hover)">
@@ -44,14 +56,14 @@ export default function ProjectCard({ project, compact = false }: ProjectCardPro
         )}
       </div>
 
-      <div className={compact ? "p-3" : "p-4"}>
+      <div className={compact ? "p-3" : "p-8 min-[801px]:p-4"}>
         <p
-          className={`mb-1 font-bold text-foreground ${compact ? "text-[13px]" : "text-[15px]"}`}
+          className={`mb-1 font-bold text-foreground ${compact ? "text-[13px]" : "text-[22px] min-[801px]:text-[15px]"}`}
         >
           {title}
         </p>
         <p
-          className={`leading-relaxed text-(--muted) ${compact ? "mb-2 text-[11px]" : "mb-2.5 text-[12.5px]"}`}
+          className={`leading-relaxed text-(--muted) ${compact ? "mb-2 text-[11px]" : "mb-2.5 text-[20.5px] min-[801px]:text-[12.5px]"}`}
         >
           {description}
         </p>
@@ -59,7 +71,7 @@ export default function ProjectCard({ project, compact = false }: ProjectCardPro
           {tags.map((tag) => (
             <span
               key={tag}
-              className={`rounded-full bg-[color-mix(in_srgb,var(--accent)_16%,transparent)] text-[var(--accent)] ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"}`}
+              className={`rounded-full bg-[color-mix(in_srgb,var(--accent)_16%,transparent)] text-[var(--accent)] ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[13px] min-[801px]:text-[11px]"}`}
             >
               {tag}
             </span>
@@ -74,7 +86,9 @@ export default function ProjectCard({ project, compact = false }: ProjectCardPro
               onClick={(e) => e.stopPropagation()}
               className={`group/gh ml-auto flex items-center overflow-hidden rounded-full border border-(--surface-border) bg-(--surface-bg) text-(--foreground) transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:border-(--surface-border-hover) hover:bg-(--surface-bg-hover) hover:text-(--accent) hover:pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${compact ? "h-6 w-6 hover:w-auto" : "h-7 w-7 hover:w-auto"}`}
             >
-              <span className={`flex shrink-0 items-center justify-center ${compact ? "h-6 w-6" : "h-7 w-7"}`}>
+              <span
+                className={`flex shrink-0 items-center justify-center ${compact ? "h-6 w-6" : "h-7 w-7"}`}
+              >
                 <FaGithub size={compact ? 13 : 15} />
               </span>
               <span className="flex max-w-0 items-center gap-1 overflow-hidden text-[11px] font-medium whitespace-nowrap opacity-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] delay-75 group-hover/gh:max-w-[140px] group-hover/gh:opacity-100">

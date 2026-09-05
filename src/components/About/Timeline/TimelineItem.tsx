@@ -21,21 +21,20 @@ export default function TimelineItem({
             "0 0 12px 2px color-mix(in srgb, var(--accent) 55%, transparent)",
         }}
       />
-
       <p
-        className="text-[13px] font-bold tracking-wide"
+        className="text-[16px] min-[801px]:text-[13px] font-bold tracking-wide"
         style={{ color: "var(--accent)" }}
       >
         {year}
       </p>
       <p
-        className="mt-1 mb-1.5 text-[16.5px] font-bold sm:text-[17px]"
+        className="mt-1 mb-1.5 text-[18.5px] sm:text-[16.5px] min-[801px]:text-[17px] font-bold"
         style={{ color: "var(--foreground)" }}
       >
         {title}
       </p>
       <p
-        className="max-w-[560px] text-[14.5px] leading-relaxed min-[801px]:text-[21px]"
+        className="max-w-[560px] text-[21px] leading-relaxed min-[801px]:text-[14.5px]"
         style={{ color: "var(--muted)" }}
       >
         {description}

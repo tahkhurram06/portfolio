@@ -5,7 +5,7 @@ export default function PersonalNotes() {
   return (
     <section className="animate-fade-up">
       <h2
-        className="mb-7 text-[22px] font-bold sm:mb-8 sm:text-2xl"
+        className="mb-7 text-[26px] sm:mb-8 sm:text-2xl min-[801px]:text-[22px]"
         style={{ color: "var(--foreground)" }}
       >
         A few personal notes

@@ -24,7 +24,14 @@ export default function WorkTogetherCTA() {
       >
         <div className="ctaGlowHalo" aria-hidden="true" />
         <span key={bounceKey} className={bounceKey > 0 ? "ctaBounce" : ""}>
-          <svg width="130" height="170" viewBox="0 0 130 190" fill="none" xmlns="http://www.w3.org/2000/svg" className="ctaUfoSvg">
+          <svg
+            width="130"
+            height="170"
+            viewBox="0 0 130 190"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="ctaUfoSvg"
+          >
             <defs>
               <linearGradient id="ctaBeam" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#c084fc" stopOpacity="0.55" />
@@ -42,20 +49,70 @@ export default function WorkTogetherCTA() {
             </defs>
 
             <g className="ctaHoverGroup">
-              <polygon points="26,66 104,66 128,180 2,180" fill="url(#ctaBeam)" className="ctaBeamPulse" />
+              <polygon
+                points="26,66 104,66 128,180 2,180"
+                fill="url(#ctaBeam)"
+                className="ctaBeamPulse"
+              />
 
-              <ellipse cx="65" cy="60" rx="12" ry="4.5" fill="#000" opacity="0.22" />
-              <ellipse cx="65" cy="60" rx="54" ry="13" fill="url(#ctaBody)" stroke="#c4b5fd" strokeWidth="1.6" />
-              <ellipse cx="65" cy="53" rx="35" ry="8" fill="none" stroke="#3b2560" strokeWidth="1" opacity="0.6" />
+              <ellipse
+                cx="65"
+                cy="60"
+                rx="12"
+                ry="4.5"
+                fill="#000"
+                opacity="0.22"
+              />
+              <ellipse
+                cx="65"
+                cy="60"
+                rx="54"
+                ry="13"
+                fill="url(#ctaBody)"
+                stroke="#c4b5fd"
+                strokeWidth="1.6"
+              />
+              <ellipse
+                cx="65"
+                cy="53"
+                rx="35"
+                ry="8"
+                fill="none"
+                stroke="#3b2560"
+                strokeWidth="1"
+                opacity="0.6"
+              />
 
-              <circle cx="65" cy="40" r="23" fill="url(#ctaDome)" stroke="#e9d5ff" strokeWidth="1.3" />
-              <ellipse cx="55" cy="31" rx="8" ry="5" fill="#ffffff" opacity="0.35" />
+              <circle
+                cx="65"
+                cy="40"
+                r="23"
+                fill="url(#ctaDome)"
+                stroke="#e9d5ff"
+                strokeWidth="1.3"
+              />
+              <ellipse
+                cx="55"
+                cy="31"
+                rx="8"
+                ry="5"
+                fill="#ffffff"
+                opacity="0.35"
+              />
 
               {[0, 1, 2, 3, 4, 5].map((i) => {
                 const x = 24 + i * 15;
                 const y = 60 + Math.sin(i * 0.9) * 3.5;
                 return (
-                  <circle key={i} cx={x} cy={y} r="2.6" fill="#e9d5ff" className="ctaChaseLight" style={{ animationDelay: `${i * 0.18}s` }} />
+                  <circle
+                    key={i}
+                    cx={x}
+                    cy={y}
+                    r="2.6"
+                    fill="#e9d5ff"
+                    className="ctaChaseLight"
+                    style={{ animationDelay: `${i * 0.18}s` }}
+                  />
                 );
               })}
             </g>
@@ -64,11 +121,18 @@ export default function WorkTogetherCTA() {
       </div>
 
       <div className="ctaTextGlow">
-        <h3 className="mb-2 text-[19px] font-bold sm:text-[21px]" style={{ color: "var(--foreground)" }}>
+        <h3
+          className="mb-2 text-[23px] sm:text-[19px] min-[801px]:text-[21px] font-bold"
+          style={{ color: "var(--foreground)" }}
+        >
           Want to work together?
         </h3>
-        <p className="mb-5 text-[13.5px] leading-relaxed" style={{ color: "var(--muted)" }}>
-          Got a project, a role, or just want to chat — I&apos;d love to hear from you.
+        <p
+          className="mb-5 text-[20.5px] min-[801px]:text-[13.5px] leading-relaxed"
+          style={{ color: "var(--muted)" }}
+        >
+          Got a project, a role, or just want to chat — I&apos;d love to hear
+          from you.
         </p>
         <a
           href="/contact"
