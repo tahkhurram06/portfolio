@@ -40,7 +40,7 @@ export default function Bio() {
         </h1>
 
         <p
-          className="mx-auto text-[19px] leading-relaxed min-[801px]:mx-0"
+          className="mx-auto text-[16px] leading-relaxed min-[801px]:mx-0"
           style={{ color: "var(--muted)" }}
         >
           I&apos;m Taha, a self-taught frontend developer who learns by shipping

@@ -1,5 +1,9 @@
 @import "tailwindcss";
-
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 /* Tailwind v4 class-based dark mode: dark: utilities apply when an
    ancestor has class="dark" (set by next-themes on <html>). */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -128,27 +132,56 @@
   --animate-fade-up: fade-up 0.7s ease-out both;
 
   @keyframes fade-up {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes ring-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes hero-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   @keyframes hero-wave {
-    0%, 60%, 100% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
+    0%,
+    60%,
+    100% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
   }
 }
 
@@ -156,7 +189,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .animate-delay-1 {
@@ -199,8 +234,14 @@ body {
   margin-left: -11px;
   margin-top: -11px;
   border-radius: 999px;
-  background: radial-gradient(circle at 35% 35%, var(--cursor-a), var(--cursor-b) 55%, var(--cursor-c));
-  box-shadow: 0 0 10px 3px color-mix(in srgb, var(--cursor-b) 65%, transparent),
+  background: radial-gradient(
+    circle at 35% 35%,
+    var(--cursor-a),
+    var(--cursor-b) 55%,
+    var(--cursor-c)
+  );
+  box-shadow:
+    0 0 10px 3px color-mix(in srgb, var(--cursor-b) 65%, transparent),
     0 0 26px 9px color-mix(in srgb, var(--cursor-b) 32%, transparent);
   pointer-events: none;
   z-index: 9999;
@@ -210,12 +251,15 @@ body {
 }
 
 @keyframes cometPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px 3px color-mix(in srgb, var(--cursor-b) 65%, transparent),
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px 3px color-mix(in srgb, var(--cursor-b) 65%, transparent),
       0 0 26px 9px color-mix(in srgb, var(--cursor-b) 32%, transparent);
   }
   50% {
-    box-shadow: 0 0 15px 5px color-mix(in srgb, var(--cursor-b) 80%, transparent),
+    box-shadow:
+      0 0 15px 5px color-mix(in srgb, var(--cursor-b) 80%, transparent),
       0 0 36px 14px color-mix(in srgb, var(--cursor-b) 45%, transparent);
   }
 }
@@ -229,7 +273,12 @@ body {
   margin-left: -6px;
   margin-top: -6px;
   border-radius: 999px;
-  background: radial-gradient(circle, var(--cursor-a), var(--cursor-b) 60%, transparent 100%);
+  background: radial-gradient(
+    circle,
+    var(--cursor-a),
+    var(--cursor-b) 60%,
+    transparent 100%
+  );
   filter: blur(1px);
   opacity: 0;
   pointer-events: none;
@@ -250,7 +299,9 @@ body {
   z-index: 9997;
   opacity: 0;
   transform: scale(0.7);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   display: none;
   will-change: transform;
 }
@@ -329,8 +380,12 @@ body {
 }
 
 @keyframes cometOrbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
