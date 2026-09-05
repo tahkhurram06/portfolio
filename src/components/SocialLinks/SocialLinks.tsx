@@ -29,8 +29,11 @@ export default function SocialLinks() {
             e.currentTarget.style.color = "var(--foreground)";
           }}
         >
-          <Icon size={16} className="min-[400px]:hidden w-[35px] h-[40px]" />
-          <Icon size={18} className="hidden min-[400px]:block" />
+          <Icon size={16} className="min-[400px]:hidden" />
+          <Icon
+            size={18}
+            className="hidden min-[400px]:block  w-[35px] h-[40px]"
+          />
         </a>
       ))}
     </div>
