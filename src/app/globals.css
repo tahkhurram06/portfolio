@@ -1,0 +1,402 @@
+@import "tailwindcss";
+
+/* Tailwind v4 class-based dark mode: dark: utilities apply when an
+   ancestor has class="dark" (set by next-themes on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* ---- Light theme (default) ---- */
+  --background: #fbfaff;
+  --foreground: #1a1025;
+  --muted: rgba(26, 16, 37, 0.64);
+  --muted-strong: rgba(26, 16, 37, 0.8);
+
+  --nav-bg: rgba(255, 255, 255, 0.78);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.92);
+  --nav-border: rgba(124, 58, 237, 0.2);
+  --overlay-bg: rgba(255, 255, 255, 0.97);
+
+  --surface-bg: rgba(124, 58, 237, 0.055);
+  --surface-bg-hover: rgba(124, 58, 237, 0.11);
+  --surface-border: rgba(124, 58, 237, 0.2);
+  --surface-border-hover: rgba(124, 58, 237, 0.45);
+
+  --pill-active-from: #7c3aed;
+  --pill-active-to: #a855f7;
+  --pill-active-text: #ffffff;
+
+  --accent: #7c3aed;
+  --accent-dot: #7c3aed;
+
+  --hex-line: rgba(124, 58, 237, 0.14);
+  --hex-glow: rgba(124, 58, 237, 0.24);
+
+  --cursor-a: #c084fc;
+  --cursor-b: #7c3aed;
+  --cursor-c: #5b21a0;
+
+  --shadow-nav: 0 8px 28px rgba(124, 58, 237, 0.1);
+}
+
+.dark {
+  /* ---- Dark theme (your original palette) ---- */
+  --background: #030103;
+  --foreground: #f5f0ff;
+  --muted: rgba(237, 225, 255, 0.6);
+  --muted-strong: rgba(237, 225, 255, 0.75);
+
+  --nav-bg: rgba(15, 8, 26, 0.55);
+  --nav-bg-scrolled: rgba(15, 8, 26, 0.78);
+  --nav-border: rgba(168, 85, 247, 0.18);
+  --overlay-bg: rgba(5, 2, 8, 0.97);
+
+  --surface-bg: rgba(168, 85, 247, 0.1);
+  --surface-bg-hover: rgba(168, 85, 247, 0.22);
+  --surface-border: rgba(168, 85, 247, 0.25);
+  --surface-border-hover: rgba(168, 85, 247, 0.6);
+
+  --pill-active-from: #e9d5ff;
+  --pill-active-to: #a855f7;
+  --pill-active-text: #0a0410;
+
+  --accent: #a855f7;
+  --accent-dot: #f5f0ff;
+
+  --hex-line: rgba(59, 30, 110, 0.3);
+  --hex-glow: rgba(168, 85, 247, 0.4);
+
+  --cursor-a: #d8b4fe;
+  --cursor-b: #a855f7;
+  --cursor-c: #7e22ce;
+
+  --shadow-nav: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Zero-JS fallback: if the visitor's OS is set to dark and no explicit
+   .light/.dark class is on <html> yet, match system theme immediately
+   on first paint — no script involved at all. Once ThemeToggle mounts,
+   it applies the resolved class explicitly (see .dark rule above),
+   which then takes over. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #030103;
+    --foreground: #f5f0ff;
+    --muted: rgba(237, 225, 255, 0.6);
+    --muted-strong: rgba(237, 225, 255, 0.75);
+
+    --nav-bg: rgba(15, 8, 26, 0.55);
+    --nav-bg-scrolled: rgba(15, 8, 26, 0.78);
+    --nav-border: rgba(168, 85, 247, 0.18);
+    --overlay-bg: rgba(5, 2, 8, 0.97);
+
+    --surface-bg: rgba(168, 85, 247, 0.1);
+    --surface-bg-hover: rgba(168, 85, 247, 0.22);
+    --surface-border: rgba(168, 85, 247, 0.25);
+    --surface-border-hover: rgba(168, 85, 247, 0.6);
+
+    --pill-active-from: #e9d5ff;
+    --pill-active-to: #a855f7;
+    --pill-active-text: #0a0410;
+
+    --accent: #a855f7;
+    --accent-dot: #f5f0ff;
+
+    --hex-line: rgba(59, 30, 110, 0.3);
+    --hex-glow: rgba(168, 85, 247, 0.4);
+
+    --cursor-a: #d8b4fe;
+    --cursor-b: #a855f7;
+    --cursor-c: #7e22ce;
+
+    --shadow-nav: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-ring-spin: ring-spin 14s linear infinite;
+  --animate-ring-spin-reverse: ring-spin 20s linear infinite reverse;
+  --animate-ring-spin-slow: ring-spin 26s linear infinite;
+  --animate-float: hero-float 5s ease-in-out infinite;
+  --animate-float-delay-1: hero-float 6.5s ease-in-out infinite 0.6s;
+  --animate-float-delay-2: hero-float 5.8s ease-in-out infinite 1.2s;
+  --animate-wave: hero-wave 2.2s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s ease-out both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes ring-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes hero-wave {
+    0%, 60%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.12s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+/* ===== Comet cursor =====
+   Three pieces, positioned every frame from HexGridBackground.tsx:
+
+   - .cometHead: the bright "nucleus" that tracks the pointer. Sized up
+     from the old worm cursor and given a slow glow pulse (animated on
+     box-shadow, not transform, so it never fights the per-frame
+     translate/rotate/scale the JS sets on this element).
+
+   - .cometParticle (x N): small glowing dots trailing behind the head,
+     each lagging further behind along the recent movement path.
+     Positioned every frame from JS (translate + scale + opacity only)
+     — no per-particle CSS transform/animation needed. Together they
+     read as a soft drifting trail rather than a hard wedge shape.
+
+   - .cursorRing: three nested rings shown only while hovering something
+     interactive (see INTERACTIVE_SELECTOR in the component) — same
+     look as the orbiting rings around the Hero photo, just smaller.
+     The outer wrapper is positioned by JS (translate only); each ring's
+     spin lives on its own child via the existing ring-spin keyframes,
+     so JS and CSS never touch the same transform. */
+
+.cometHead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, var(--cursor-a), var(--cursor-b) 55%, var(--cursor-c));
+  box-shadow: 0 0 10px 3px color-mix(in srgb, var(--cursor-b) 65%, transparent),
+    0 0 26px 9px color-mix(in srgb, var(--cursor-b) 32%, transparent);
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  display: none;
+  animation: cometPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes cometPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px 3px color-mix(in srgb, var(--cursor-b) 65%, transparent),
+      0 0 26px 9px color-mix(in srgb, var(--cursor-b) 32%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px color-mix(in srgb, var(--cursor-b) 80%, transparent),
+      0 0 36px 14px color-mix(in srgb, var(--cursor-b) 45%, transparent);
+  }
+}
+
+.cometParticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--cursor-a), var(--cursor-b) 60%, transparent 100%);
+  filter: blur(1px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform, opacity;
+  display: none;
+}
+
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  margin-left: -32px;
+  margin-top: -32px;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: none;
+  will-change: transform;
+}
+
+.cursorRing--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cursorRing__ring {
+  position: absolute;
+  border-radius: 999px;
+  border-style: solid;
+}
+
+.cursorRing__ring--1 {
+  inset: 0;
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--cursor-b) 30%, transparent);
+  border-top-color: var(--cursor-a);
+  box-shadow: 0 0 12px 1px color-mix(in srgb, var(--cursor-a) 35%, transparent);
+  animation: cometOrbitSpin 3s linear infinite;
+}
+.cursorRing__ring--1::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  border-radius: 999px;
+  background: var(--cursor-a);
+  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--cursor-a) 80%, transparent);
+}
+
+.cursorRing__ring--2 {
+  inset: 9%;
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--cursor-b) 22%, transparent);
+  border-right-color: var(--cursor-b);
+  box-shadow: 0 0 9px 1px color-mix(in srgb, var(--cursor-b) 30%, transparent);
+  animation: cometOrbitSpin 4.5s linear infinite reverse;
+}
+.cursorRing__ring--2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 999px;
+  background: var(--cursor-b);
+  box-shadow: 0 0 7px 2px color-mix(in srgb, var(--cursor-b) 75%, transparent);
+}
+
+.cursorRing__ring--3 {
+  inset: 18%;
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--cursor-b) 18%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--cursor-a) 90%, white);
+  animation: cometOrbitSpin 6s linear infinite;
+}
+.cursorRing__ring--3::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  margin-left: -1.5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cursor-a) 90%, white);
+  box-shadow: 0 0 6px 1.5px color-mix(in srgb, var(--cursor-a) 70%, transparent);
+}
+
+@keyframes cometOrbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cometHead,
+  .cometParticle,
+  .cursorRing {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cometHead {
+    animation: none;
+  }
+  .cometParticle,
+  .cursorRing {
+    display: none !important;
+  }
+}
+
+.hexbg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--background);
+  --x: 50%;
+  --y: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.hexbg__grid {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='72.75' viewBox='0 0 126 72.75'%3E%3Cpath d='M84,36.38 L63,72.75 L21,72.75 L0,36.38 L21,0 L63,0 Z M147,0 L126,36.37 L84,36.37 L63,0 L84,-36.37 L126,-36.37 Z M147,72.75 L126,109.12 L84,109.12 L63,72.75 L84,36.38 L126,36.38 Z' fill='none' stroke='%237c3aed' stroke-width='1' opacity='0.16'/%3E%3C/svg%3E");
+  background-size: 126px 72.75px;
+}
+
+.dark .hexbg__grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='72.75' viewBox='0 0 126 72.75'%3E%3Cpath d='M84,36.38 L63,72.75 L21,72.75 L0,36.38 L21,0 L63,0 Z M147,0 L126,36.37 L84,36.37 L63,0 L84,-36.37 L126,-36.37 Z M147,72.75 L126,109.12 L84,109.12 L63,72.75 L84,36.38 L126,36.38 Z' fill='none' stroke='%233b1e6e' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+.hexbg__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 240px at var(--x) var(--y),
+    var(--hex-glow),
+    color-mix(in srgb, var(--hex-glow) 35%, transparent) 40%,
+    transparent 70%
+  );
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='72.75' viewBox='0 0 126 72.75'%3E%3Cpath d='M84,36.38 L63,72.75 L21,72.75 L0,36.38 L21,0 L63,0 Z M147,0 L126,36.37 L84,36.37 L63,0 L84,-36.37 L126,-36.37 Z M147,72.75 L126,109.12 L84,109.12 L63,72.75 L84,36.38 L126,36.38 Z' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='72.75' viewBox='0 0 126 72.75'%3E%3Cpath d='M84,36.38 L63,72.75 L21,72.75 L0,36.38 L21,0 L63,0 Z M147,0 L126,36.37 L84,36.37 L63,0 L84,-36.37 L126,-36.37 Z M147,72.75 L126,109.12 L84,109.12 L63,72.75 L84,36.38 L126,36.38 Z' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E");
+  -webkit-mask-size: 126px 72.75px;
+  mask-size: 126px 72.75px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ring-spin,
+  .animate-ring-spin-reverse,
+  .animate-ring-spin-slow,
+  .animate-float,
+  .animate-float-delay-1,
+  .animate-float-delay-2,
+  .animate-wave,
+  .animate-fade-up {
+    animation: none;
+  }
+}
