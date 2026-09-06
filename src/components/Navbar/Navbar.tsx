@@ -64,7 +64,7 @@ export default function Navbar() {
     }
 
     const sections = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-nav-section]")
+      document.querySelectorAll<HTMLElement>("[data-nav-section]"),
     );
     if (sections.length === 0) {
       setActiveSection(null);
@@ -110,7 +110,8 @@ export default function Navbar() {
 
   const isLinkActive = (href: string) => {
     if (href === "/") return pathname === "/" && activeSection === null;
-    if (href.includes("#")) return pathname === "/" && activeSection === href.split("#")[1];
+    if (href.includes("#"))
+      return pathname === "/" && activeSection === href.split("#")[1];
     return pathname === href;
   };
 
@@ -125,7 +126,9 @@ export default function Navbar() {
           className="mx-auto flex max-w-220 items-center justify-between gap-3 rounded-full border py-2.5 pr-3 pl-5 backdrop-blur-2xl transition-colors duration-300 min-[901px]:gap-6"
           style={{
             borderColor: "var(--nav-border)",
-            backgroundColor: scrolled ? "var(--nav-bg-scrolled)" : "var(--nav-bg)",
+            backgroundColor: scrolled
+              ? "var(--nav-bg-scrolled)"
+              : "var(--nav-bg)",
             boxShadow: "var(--shadow-nav)",
           }}
         >
@@ -172,7 +175,10 @@ export default function Navbar() {
               aria-label="Open menu"
               aria-expanded={menuOpen}
               className={`flex h-9.5 w-9.5 shrink-0 flex-col items-center justify-center gap-1.5 rounded-full border transition-all duration-250 hover:-translate-y-0.5 ${FOCUS_RING}`}
-              style={{ borderColor: "var(--surface-border)", backgroundColor: "var(--surface-bg)" }}
+              style={{
+                borderColor: "var(--surface-border)",
+                backgroundColor: "var(--surface-bg)",
+              }}
             >
               <span
                 className="block h-0.5 w-4 rounded-full"
@@ -197,7 +203,7 @@ export default function Navbar() {
             button lives inside the overlay itself, rather than relying
             on toggling the same hamburger button underneath it. */}
         <div
-          className="fixed inset-0 z-999 flex items-center justify-center backdrop-blur-[20px] transition-[opacity,visibility] duration-350"
+          className="fixed inset-0 z-999 overflow-y-auto backdrop-blur-[20px] transition-[opacity,visibility] duration-350"
           style={{
             backgroundColor: "var(--overlay-bg)",
             opacity: menuOpen ? 1 : 0,
@@ -207,10 +213,20 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
-            className={`absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-250 hover:-translate-y-0.5 hover:border-[var(--surface-border-hover)] hover:bg-[var(--surface-bg-hover)] ${FOCUS_RING}`}
-            style={{ borderColor: "var(--surface-border)", backgroundColor: "var(--surface-bg)" }}
+            className={`fixed top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-250 hover:-translate-y-0.5 hover:border-[var(--surface-border-hover)] hover:bg-[var(--surface-bg-hover)] ${FOCUS_RING}`}
+            style={{
+              borderColor: "var(--surface-border)",
+              backgroundColor: "var(--surface-bg)",
+            }}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
               <path
                 d="M2 2L14 14M14 2L2 14"
                 stroke="var(--foreground)"
@@ -220,12 +236,14 @@ export default function Navbar() {
             </svg>
           </button>
 
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex min-h-full flex-col items-center justify-center gap-3 py-20">
             {LINKS.map((link, i) => (
               <div
                 key={link.href}
                 className={`text-[22px] transition-[opacity,transform] duration-400 [&_a]:px-6 [&_a]:py-2.5 [&_a]:text-[22px] ${
-                  menuOpen ? "translate-y-0 opacity-100" : "translate-y-3.5 opacity-0"
+                  menuOpen
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-3.5 opacity-0"
                 }`}
                 style={{ transitionDelay: `${menuOpen ? i * 60 : 0}ms` }}
               >
@@ -273,14 +291,26 @@ export default function Navbar() {
           boxShadow: "var(--shadow-nav)",
         }}
       >
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
           <path
             d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"
             stroke="var(--accent)"
             strokeWidth="1.7"
             strokeLinejoin="round"
           />
-          <path d="M14 2v6h6" stroke="var(--accent)" strokeWidth="1.7" strokeLinejoin="round" />
+          <path
+            d="M14 2v6h6"
+            stroke="var(--accent)"
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
         </svg>
         Resume
       </a>
