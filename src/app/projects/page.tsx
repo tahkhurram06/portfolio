@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="relative z-10 flex flex-col flex-1">
-      <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-20 px-6 pt-[140px] pb-24 sm:gap-24 sm:px-8 min-[901px]:pt-40 min-[901px]:gap-28">
+      <div className="mx-auto flex w-full max-w-250 flex-col gap-20 px-6 pt-35 pb-24 sm:gap-24 sm:px-8 min-[901px]:pt-40 min-[901px]:gap-28">
         <Projects />
       </div>
     </div>
