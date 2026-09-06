@@ -25,13 +25,13 @@ export default function Footer() {
             <Logo className="h-15 w-auto shrink-0 sm:h-11" />
             <div>
               <p
-                className="text-[22px] min-[801px]:text-[15px] font-semibold"
+                className="text-[15px] font-semibold"
                 style={{ color: "var(--foreground)" }}
               >
                 Taha
               </p>
               <p
-                className="mt-0.5 text-[18px] min-[801px]:text-[13px]"
+                className="mt-0.5 text-[13px]"
                 style={{ color: "var(--muted)" }}
               >
                 Full stack developer, based in Karachi
@@ -41,10 +41,7 @@ export default function Footer() {
 
           <div className="footerFloat footerFloatDelay flex flex-col items-center gap-3 min-[801px]:items-end">
             <SocialLinks />
-            <p
-              className="text-[15px] min-[801px]:text-[12px]"
-              style={{ color: "var(--muted)" }}
-            >
+            <p className="text-[12px]" style={{ color: "var(--muted)" }}>
               © {year} Taha — built with Next.js and Tailwind
             </p>
           </div>

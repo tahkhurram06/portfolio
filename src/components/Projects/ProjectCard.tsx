@@ -58,12 +58,12 @@ export default function ProjectCard({
 
       <div className={compact ? "p-3" : "p-8 min-[801px]:p-4"}>
         <p
-          className={`mb-1 font-bold text-foreground ${compact ? "text-[13px]" : "text-[22px] min-[801px]:text-[15px]"}`}
+          className={`mb-1 font-bold text-foreground ${compact ? "text-[13px]" : "text-[15px]"}`}
         >
           {title}
         </p>
         <p
-          className={`leading-relaxed text-(--muted) ${compact ? "mb-2 text-[11px]" : "mb-2.5 text-[20.5px] min-[801px]:text-[12.5px]"}`}
+          className={`leading-relaxed text-(--muted) ${compact ? "mb-2 text-[11px]" : "mb-2.5 text-[12.5px]"}`}
         >
           {description}
         </p>
@@ -71,7 +71,7 @@ export default function ProjectCard({
           {tags.map((tag) => (
             <span
               key={tag}
-              className={`rounded-full bg-[color-mix(in_srgb,var(--accent)_16%,transparent)] text-[var(--accent)] ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[13px] min-[801px]:text-[11px]"}`}
+              className={`rounded-full bg-[color-mix(in_srgb,var(--accent)_16%,transparent)] text-[var(--accent)] ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"}`}
             >
               {tag}
             </span>

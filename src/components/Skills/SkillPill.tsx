@@ -35,7 +35,7 @@ export default function SkillPill({ name, icon: Icon, color }: SkillPillProps) {
       </div>
 
       <span
-        className="text-center text-[16.5px] min-[701px]:text-[12.5px] font-semibold"
+        className="text-center text-[12.5px] font-semibold"
         style={{ color: "var(--foreground)" }}
       >
         {name}

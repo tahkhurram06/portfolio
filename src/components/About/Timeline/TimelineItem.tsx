@@ -22,19 +22,19 @@ export default function TimelineItem({
         }}
       />
       <p
-        className="text-[16px] min-[801px]:text-[13px] font-bold tracking-wide"
+        className="text-[13px] font-bold tracking-wide"
         style={{ color: "var(--accent)" }}
       >
         {year}
       </p>
       <p
-        className="mt-1 mb-1.5 text-[18.5px] sm:text-[16.5px] min-[801px]:text-[17px] font-bold"
+        className="mt-1 mb-1.5 text-[17px] font-bold"
         style={{ color: "var(--foreground)" }}
       >
         {title}
       </p>
       <p
-        className="max-w-[560px] text-[21px] leading-relaxed min-[801px]:text-[14.5px]"
+        className="max-w-[560px] text-[14.5px] leading-relaxed"
         style={{ color: "var(--muted)" }}
       >
         {description}

@@ -122,13 +122,13 @@ export default function WorkTogetherCTA() {
 
       <div className="ctaTextGlow">
         <h3
-          className="mb-2 text-[23px] sm:text-[19px] min-[801px]:text-[21px] font-bold"
+          className="mb-2 text-[21px] font-bold"
           style={{ color: "var(--foreground)" }}
         >
           Want to work together?
         </h3>
         <p
-          className="mb-5 text-[20.5px] min-[801px]:text-[13.5px] leading-relaxed"
+          className="mb-5 text-[13.5px] leading-relaxed"
           style={{ color: "var(--muted)" }}
         >
           Got a project, a role, or just want to chat — I&apos;d love to hear
