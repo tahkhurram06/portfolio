@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImg from "../../../assets/hero-avatar.png";
+import HeroImg from "../../../../public/about-img.jpg";
 
 export default function Bio() {
   return (
