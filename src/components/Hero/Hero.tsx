@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImg from "../../assets/hero-avatar.png";
+import HeroImg from "../../../public/hero-img.jpg";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import FloatingBotUFO from "../FloatingBot/FloatingBot";
 
