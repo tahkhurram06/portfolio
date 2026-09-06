@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="relative z-10 px-6 pb-8 sm:px-8">
       <div
-        className="footerCard relative mx-auto w-full max-w-[1000px] overflow-hidden rounded-t-[2.25rem] rounded-b-2xl border"
+        className="footerCard relative mx-auto w-full max-w-250 overflow-hidden rounded-t-[2.25rem] rounded-b-2xl border"
         style={{
           borderColor: "var(--surface-border)",
           backgroundColor: "var(--surface-bg)",
