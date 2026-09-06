@@ -23,8 +23,11 @@ export default function ThemeToggle() {
     } catch {
       // localStorage unavailable — fall back to system preference
     }
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const resolved = stored === "light" || stored === "dark" ? stored === "dark" : systemDark;
+    const systemDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const resolved =
+      stored === "light" || stored === "dark" ? stored === "dark" : systemDark;
 
     applyTheme(resolved);
     setIsDark(resolved);
@@ -46,8 +49,10 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Toggle theme"}
-      className="relative flex h-9 w-16 shrink-0 items-center rounded-full border px-1 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+      aria-label={
+        mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Toggle theme"
+      }
+      className="relative flex h-9 w-16 shrink-0 items-center rounded-full border px-1 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background)"
       style={{
         borderColor: "var(--surface-border)",
         backgroundColor: "var(--surface-bg)",
