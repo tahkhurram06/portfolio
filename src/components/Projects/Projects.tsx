@@ -52,7 +52,10 @@ export default function Projects({
         // there was really room for them.
         <div className="flex gap-4 overflow-x-auto pb-2 min-[801px]:grid min-[801px]:grid-cols-3 min-[801px]:overflow-visible min-[801px]:pb-0">
           {list.map((project) => (
-            <div key={project.title} className="w-[85%] shrink-0 min-[801px]:w-auto min-[801px]:shrink">
+            <div
+              key={project.title}
+              className="w-[85%] shrink-0 min-[801px]:w-auto min-[801px]:shrink"
+            >
               <ProjectCard project={project} />
             </div>
           ))}
@@ -69,7 +72,7 @@ export default function Projects({
         <div className="mt-8 flex justify-center">
           <Link
             href="/projects"
-            className="rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+            className="rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background)"
             style={{
               color: "var(--foreground)",
               borderColor: "var(--surface-border)",
