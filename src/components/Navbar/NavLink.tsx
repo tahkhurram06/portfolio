@@ -10,7 +10,12 @@ type NavLinkProps = {
   onClick?: () => void;
 };
 
-export default function NavLink({ href, label, isActive, onClick }: NavLinkProps) {
+export default function NavLink({
+  href,
+  label,
+  isActive,
+  onClick,
+}: NavLinkProps) {
   const pathname = usePathname();
   const isHomeLink = href === "/";
   const isHashLink = href.includes("#");
@@ -50,8 +55,8 @@ export default function NavLink({ href, label, isActive, onClick }: NavLinkProps
       onClick={handleClick}
       className={
         isActive
-          ? `relative whitespace-nowrap rounded-full bg-linear-to-br from-[var(--pill-active-from)] to-[var(--pill-active-to)] px-3.5 py-2 text-sm font-medium text-[var(--pill-active-text)] shadow-[0_0_16px_color-mix(in_srgb,var(--pill-active-to)_50%,transparent)] transition-colors duration-300 ease-out ${focusRing}`
-          : `relative whitespace-nowrap rounded-full bg-transparent px-3.5 py-2 text-sm font-medium text-[var(--muted)] transition-colors duration-300 ease-out hover:bg-[var(--surface-bg)] hover:text-[var(--foreground)] ${focusRing}`
+          ? `relative whitespace-nowrap rounded-full bg-linear-to-br from-(--pill-active-from) to-(--pill-active-to) px-3.5 py-2 text-sm font-medium text-(--pill-active-text) shadow-[0_0_16px_color-mix(in_srgb,var(--pill-active-to)_50%,transparent)] transition-colors duration-300 ease-out ${focusRing}`
+          : `relative whitespace-nowrap rounded-full bg-transparent px-3.5 py-2 text-sm font-medium text-(--muted) transition-colors duration-300 ease-out hover:bg-(--surface-bg) hover:text-foreground) ${focusRing}`
       }
     >
       {label}
