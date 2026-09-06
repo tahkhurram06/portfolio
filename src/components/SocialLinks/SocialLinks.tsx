@@ -12,7 +12,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={name}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-250 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-250 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           style={{
             borderColor: "var(--surface-border)",
             backgroundColor: "var(--surface-bg)",
