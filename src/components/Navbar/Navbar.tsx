@@ -213,7 +213,7 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
-            className={`fixed top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-250 hover:-translate-y-0.5 hover:border-[var(--surface-border-hover)] hover:bg-[var(--surface-bg-hover)] ${FOCUS_RING}`}
+            className={`fixed top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-250 hover:-translate-y-0.5 hover:border-(--surface-border-hover) hover:bg-(--surface-bg-hover) ${FOCUS_RING}`}
             style={{
               borderColor: "var(--surface-border)",
               backgroundColor: "var(--surface-bg)",
