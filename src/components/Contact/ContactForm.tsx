@@ -38,7 +38,8 @@ export default function ContactForm() {
     const next: FieldErrors = {};
     if (!values.name.trim()) next.name = "Enter your name";
     if (!values.email.trim()) next.email = "Enter your email";
-    else if (!EMAIL_RE.test(values.email.trim())) next.email = "That email doesn't look right";
+    else if (!EMAIL_RE.test(values.email.trim()))
+      next.email = "That email doesn't look right";
     if (!values.message.trim()) next.message = "Write a short message";
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -60,7 +61,10 @@ export default function ContactForm() {
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(values),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -77,7 +81,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="flex h-full flex-col gap-4 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-bg)] p-6 transition-all duration-250 hover:-translate-y-1 sm:p-7"
+      className="flex h-full flex-col gap-4 rounded-2xl border border-(--surface-border) bg-(--surface-bg) p-6 transition-all duration-250 hover:-translate-y-1 sm:p-7"
     >
       {/* Honeypot field — invisible to real visitors, invisible to
           screen readers, and skipped in keyboard tab order. Bots that
@@ -107,7 +111,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-name"
-          className="mb-1.5 block text-[12.5px] font-bold text-[var(--accent)]"
+          className="mb-1.5 block text-[12.5px] font-bold text-(--accent)"
         >
           Name
         </label>
@@ -129,7 +133,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-email"
-          className="mb-1.5 block text-[12.5px] font-bold text-[var(--accent)]"
+          className="mb-1.5 block text-[12.5px] font-bold text-(--accent)"
         >
           Email
         </label>
@@ -151,7 +155,7 @@ export default function ContactForm() {
       <div className="flex flex-1 flex-col">
         <label
           htmlFor="contact-message"
-          className="mb-1.5 block text-[12.5px] font-bold text-[var(--accent)]"
+          className="mb-1.5 block text-[12.5px] font-bold text-(--accent)"
         >
           Message
         </label>
@@ -173,7 +177,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 flex items-center justify-center gap-2.5 rounded-full border border-[var(--surface-border)] bg-[var(--surface-bg-hover)] px-6 py-2.5 text-sm font-semibold text-[var(--foreground)] transition-all duration-250 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+        className="mt-1 flex items-center justify-center gap-2.5 rounded-full border border-(--surface-border) bg-(--surface-bg-hover) px-6 py-2.5 text-sm font-semibold text-foreground transition-all duration-250 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
       >
         {isSubmitting && (
           <span
@@ -186,7 +190,7 @@ export default function ContactForm() {
 
       <div aria-live="polite">
         {status === "success" && (
-          <p className="animate-fade-up rounded-xl border border-[var(--surface-border)] bg-[color-mix(in_srgb,var(--accent)_14%,transparent)] px-3.5 py-2.5 text-[13.5px] font-medium text-[var(--accent)]">
+          <p className="animate-fade-up rounded-xl border border-(--surface-border) bg-[color-mix(in_srgb,var(--accent)_14%,transparent)] px-3.5 py-2.5 text-[13.5px] font-medium text-r(--accent)">
             Message sent — I&apos;ll get back to you soon.
           </p>
         )}
