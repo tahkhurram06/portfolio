@@ -121,7 +121,7 @@ export default function ProjectCard({
           window.open(href, "_blank", "noopener,noreferrer");
         }
       }}
-      className="block h-full cursor-pointer rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+      className="block h-full cursor-pointer rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 `focus-visible:ring-offset-background"
     >
       {card}
     </div>
