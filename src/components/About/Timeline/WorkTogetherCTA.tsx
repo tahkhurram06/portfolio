@@ -8,7 +8,7 @@ export default function WorkTogetherCTA() {
   const triggerBounce = () => setBounceKey((k) => k + 1);
 
   return (
-    <div className="mx-auto flex w-full max-w-[280px] flex-col items-center self-center text-center min-[901px]:self-center">
+    <div className="mx-auto flex w-full max-w-70 flex-col items-center self-center text-center min-[901px]:self-center">
       <div
         role="button"
         tabIndex={0}

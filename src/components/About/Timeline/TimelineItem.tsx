@@ -14,7 +14,7 @@ export default function TimelineItem({
   return (
     <div className={`group relative ${isLast ? "" : "pb-9 sm:pb-10"}`}>
       <span
-        className="absolute top-1 -left-[29px] block h-3 w-3 rounded-full transition-transform duration-300 group-hover:scale-125 sm:-left-[33px]"
+        className="absolute top-1 -left-7.25 block h-3 w-3 rounded-full transition-transform duration-300 group-hover:scale-125 sm:-left-8.25"
         style={{
           backgroundColor: "var(--accent)",
           boxShadow:
@@ -34,7 +34,7 @@ export default function TimelineItem({
         {title}
       </p>
       <p
-        className="max-w-[560px] text-[14.5px] leading-relaxed"
+        className="max-w-140 text-[14.5px] leading-relaxed"
         style={{ color: "var(--muted)" }}
       >
         {description}
