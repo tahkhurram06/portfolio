@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="relative z-10 flex flex-col flex-1">
-      <div className="mx-auto flex w-full max-w-[1000px] flex-col px-6 pt-[140px] pb-24 sm:px-8 min-[901px]:pt-40">
+      <div className="mx-auto flex w-full max-w-250 flex-col px-6 pt-35 pb-24 sm:px-8 min-[901px]:pt-40">
         <Contact />
       </div>
     </div>
