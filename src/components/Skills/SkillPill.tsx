@@ -14,7 +14,7 @@ export default function SkillPill({ name, icon: Icon, color }: SkillPillProps) {
 
   return (
     <div
-      className="flex aspect-square w-30 shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border transition-all duration-250 hover:-translate-y-1 sm:w-23 min-[701px]:w-25"
+      className="flex aspect-square w-21 shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border transition-all duration-250 hover:-translate-y-1 sm:w-23 min-[701px]:w-25"
       style={{
         borderColor: hovered ? color : "var(--surface-border)",
         backgroundColor: hovered
@@ -26,12 +26,10 @@ export default function SkillPill({ name, icon: Icon, color }: SkillPillProps) {
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className="flex h-17 w-17 items-center justify-center rounded-xl transition-all duration-250"
+        className="flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-250"
         style={{ backgroundColor: color }}
       >
-        <div className="w-10 h-10 min-[801px]:w-6 min-[801px]:h-6">
-          <Icon className="w-full h-full" style={{ color: "#0a0410" }} />
-        </div>
+        <Icon size={24} style={{ color: "#0a0410" }} />
       </div>
 
       <span
