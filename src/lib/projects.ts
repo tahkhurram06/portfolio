@@ -45,7 +45,7 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
     href: "https://compare-ex.vercel.app",
     githubHref: "https://github.com/tahkhurram06/compare-ex", // optional, if public
-    image: "/projects/compare-ex.png",
+    image: "./projects/compare-ex.png",
   },
   {
     title: "Add project #5",
