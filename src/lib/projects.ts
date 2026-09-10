@@ -41,7 +41,7 @@ export const projects: Project[] = [
     title: "Compare-Ex",
     description:
       "Browse mobile phone models with specs and side-by-side comparisons.",
-    tags: ["Vite", "React"], // adjust to whatever you actually used
+    tags: ["React", "Vite"], // adjust to whatever you actually used
     gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
     href: "https://compare-ex.vercel.app",
     githubHref: "https://github.com/tahkhurram06/compare-ex", // optional, if public
