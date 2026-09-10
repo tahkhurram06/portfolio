@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-   metadataBase: new URL("https://tahakhurram.com"),
-   
+  metadataBase: new URL("https://portfolio-nine-rouge-86.vercel.app"),
+
   title: {
     default: "Taha Khurram — Full Stack Developer",
     template: "%s | Taha Khurram",
