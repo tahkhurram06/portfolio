@@ -21,6 +21,16 @@ export const projects: Project[] = [
     href: "#",
   },
   {
+    title: "Compare-Ex",
+    description:
+      "Browse mobile phone models with specs and side-by-side comparisons.",
+    tags: ["React", "Vite"], // adjust to whatever you actually used
+    gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
+    href: "https://compare-ex.vercel.app",
+    githubHref: "https://github.com/tahkhurram06/compare-ex", // optional, if public
+    image: "/projects/compare-ex.png",
+  },
+  {
     title: "SHOP.CO",
     description: "Fashion storefront built with React and Vite.",
     tags: ["React", "Vite"],
@@ -37,16 +47,7 @@ export const projects: Project[] = [
     labelColor: "rgba(10,4,16,0.75)",
     href: "#",
   },
-  {
-    title: "Compare-Ex",
-    description:
-      "Browse mobile phone models with specs and side-by-side comparisons.",
-    tags: ["React", "Vite"], // adjust to whatever you actually used
-    gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
-    href: "https://compare-ex.vercel.app",
-    githubHref: "https://github.com/tahkhurram06/compare-ex", // optional, if public
-    image: "/projects/compare-ex.png",
-  },
+
   {
     title: "Add project #5",
     description: "Replace with a real project description.",
