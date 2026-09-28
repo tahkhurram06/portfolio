@@ -5,6 +5,8 @@ import "./globals.css";
 import HexGridBackground from "../components/BackGround/HexGridBackground";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import PageLoader from "../components/PageLoader/PageLoader";
+import DevConsoleFilter from "../components/DevConsoleFilter/DevConsoleFilter";
 import { themeInitScript } from "../lib/themeScript";
 
 const geistSans = Geist({
@@ -53,28 +55,6 @@ export const metadata: Metadata = {
   },
 };
 
-// React 19 + Next.js 16.2+ emit a false-positive dev warning for any
-// inline <script> rendered via next/script's beforeInteractive
-// strategy ("Encountered a script tag while rendering React
-// component..."). The script still runs correctly during SSR — this
-// is purely a noisy console/overlay message in development, tracked
-// upstream (e.g. pacocoursey/next-themes#385, shadcn-ui/ui#10104).
-// Filtering it here keeps the dev overlay useful for real errors.
-if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
-  const originalError = console.error;
-  console.error = (...args: unknown[]) => {
-    if (
-      typeof args[0] === "string" &&
-      args[0].includes(
-        "Encountered a script tag while rendering React component",
-      )
-    ) {
-      return;
-    }
-    originalError.apply(console, args);
-  };
-}
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -84,6 +64,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head />
       <body className="min-h-full flex flex-col">
+        <DevConsoleFilter />
+        <PageLoader />
         <Script
           id="theme-init"
           strategy="beforeInteractive"

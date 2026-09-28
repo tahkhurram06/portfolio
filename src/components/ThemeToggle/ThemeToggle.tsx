@@ -12,37 +12,66 @@ export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
-  // useLayoutEffect runs synchronously before the browser paints, so
-  // applying the saved/explicit theme here causes no visible flash —
-  // no pre-hydration <script> needed at all (CSS handles the very
-  // first frame via prefers-color-scheme, see globals.css).
+  // The inline init script in layout.tsx (themeInitScript) has already
+  // put the right class on <html> before first paint. Here we only sync
+  // React state to it, so the toggle can't disagree with what's shown.
   useLayoutEffect(() => {
-    let stored: string | null = null;
-    try {
-      stored = localStorage.getItem("theme");
-    } catch {
-      // localStorage unavailable — fall back to system preference
-    }
-    const systemDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    const resolved =
-      stored === "light" || stored === "dark" ? stored === "dark" : systemDark;
-
-    applyTheme(resolved);
-    setIsDark(resolved);
+    setIsDark(document.documentElement.classList.contains("dark"));
     setMounted(true);
   }, []);
 
-  const toggle = () => {
+  const toggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     const next = !isDark;
-    setIsDark(next);
-    applyTheme(next);
-    try {
-      localStorage.setItem("theme", next ? "dark" : "light");
-    } catch {
-      // theme just won't persist across reloads in this session
+
+    const commit = () => {
+      setIsDark(next);
+      applyTheme(next);
+      try {
+        localStorage.setItem("theme", next ? "dark" : "light");
+      } catch {
+        // theme just won't persist across reloads in this session
+      }
+    };
+
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    // Circular reveal, expanding from the button, via the View
+    // Transitions API. Browsers without support (or reduced-motion
+    // users) just get the instant swap — commit() is the whole
+    // behavior either way, the animation is a progressive enhancement
+    // layered on top of it.
+    if (prefersReduced || !document.startViewTransition) {
+      commit();
+      return;
     }
+
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = left + width / 2;
+    const y = top + height / 2;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    const transition = document.startViewTransition(commit);
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 650,
+          easing: "ease-in-out",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    });
   };
 
   return (

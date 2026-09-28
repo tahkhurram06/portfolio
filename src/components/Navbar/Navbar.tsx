@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
@@ -132,13 +133,19 @@ export default function Navbar() {
             boxShadow: "var(--shadow-nav)",
           }}
         >
-          <a
+          <Link
             href="/"
             aria-label="Taha Khurram — Home"
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             className={`flex shrink-0 items-center rounded-full ${FOCUS_RING}`}
           >
             <Logo className="h-8 w-auto sm:h-9" />
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-1 min-[901px]:flex">
             {LINKS.map((link) => (

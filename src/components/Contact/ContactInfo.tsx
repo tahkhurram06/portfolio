@@ -3,7 +3,7 @@ import SocialLinks from "../SocialLinks/SocialLinks";
 
 export default function ContactInfo() {
   return (
-    <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-(--surface-border) bg-(--surface-bg) p-6 transition-all duration-250 hover:-translate-y-1 hover:border-(--surface-border-hover) hover:bg-(--surface-bg-hover) sm:p-7">
+    <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-(--surface-border) bg-(--surface-bg) p-6 transition-all duration-250 hover:-translate-y-1 hover:border-(--surface-border-hover) hover:bg-(--surface-bg-hover) hover:shadow-(--shadow-surface) sm:p-7">
       <div className="flex flex-col gap-6">
         {contactDetails.map((detail) => (
           <div key={detail.label}>
