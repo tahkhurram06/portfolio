@@ -9,11 +9,30 @@ export default function FloatingBotUFO() {
 
   useEffect(() => {
     if (pathname !== "/") return;
-    const t = setTimeout(() => setRunning(true), 150);
+
+    // Only play the intro once per browser session — otherwise it
+    // replays every time the user navigates back to "/" (the Hero
+    // component, and this bot with it, remounts on every home-page visit).
+    let alreadyShown = false;
+    try {
+      alreadyShown = sessionStorage.getItem("ufoIntroShown") === "true";
+    } catch {
+      // sessionStorage unavailable — fall back to always showing it
+    }
+    if (alreadyShown) return;
+
+    const t = setTimeout(() => {
+      setRunning(true);
+      try {
+        sessionStorage.setItem("ufoIntroShown", "true");
+      } catch {
+        // won't persist, but the animation still plays this time
+      }
+    }, 150);
     return () => clearTimeout(t);
   }, [pathname]);
 
-  if (pathname !== "/") return null;
+  if (pathname !== "/" || !running) return null;
 
   return (
     <div className="botStage" aria-hidden="true">

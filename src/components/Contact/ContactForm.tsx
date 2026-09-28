@@ -190,7 +190,7 @@ export default function ContactForm() {
 
       <div aria-live="polite">
         {status === "success" && (
-          <p className="animate-fade-up rounded-xl border border-(--surface-border) bg-[color-mix(in_srgb,var(--accent)_14%,transparent)] px-3.5 py-2.5 text-[13.5px] font-medium text-r(--accent)">
+          <p className="animate-fade-up rounded-xl border border-(--surface-border) bg-[color-mix(in_srgb,var(--accent)_14%,transparent)] px-3.5 py-2.5 text-[13.5px] font-medium text-(--accent)">
             Message sent — I&apos;ll get back to you soon.
           </p>
         )}

@@ -13,12 +13,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    title: "AURÉLIA",
-    description: "Jewelry e-commerce with a build-your-ring flow.",
+   {
+    title: "SMIT Portal Mockup",
+    description:
+      "Mockup of a student portal LMS, inspired by SMIT's actual system.",
     tags: ["Next.js", "TypeScript"],
-    gradient: "linear-gradient(135deg, #3b1e6e, #7c3aed)",
-    href: "#",
+    gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
+    href: "https://smit-portal-mockup.vercel.app/",
+    githubHref: "https://github.com/tahkhurram06/smit-portal-mockup",
+    image: "/projects/smit-portal.png",
   },
   {
     title: "Compare-Ex",
@@ -47,13 +50,11 @@ export const projects: Project[] = [
     labelColor: "rgba(10,4,16,0.75)",
     href: "#",
   },
-
   {
-    title: "Add project #5",
-    description: "Replace with a real project description.",
-    tags: ["Tag1", "Tag2"],
-    gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
-    labelColor: "rgba(10,4,16,0.75)",
+    title: "AURÉLIA",
+    description: "Jewelry e-commerce with a build-your-ring flow.",
+    tags: ["Next.js", "TypeScript"],
+    gradient: "linear-gradient(135deg, #3b1e6e, #7c3aed)",
     href: "#",
   },
 ];
