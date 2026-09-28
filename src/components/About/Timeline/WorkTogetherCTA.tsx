@@ -8,7 +8,7 @@ export default function WorkTogetherCTA() {
   const triggerBounce = () => setBounceKey((k) => k + 1);
 
   return (
-    <div className="mx-auto flex w-full max-w-70 flex-col items-center self-center text-center min-[901px]:self-center">
+    <div className="ctaGroup mx-auto flex w-full max-w-70 flex-col items-center self-center text-center min-[901px]:self-center">
       <div
         role="button"
         tabIndex={0}
@@ -136,7 +136,7 @@ export default function WorkTogetherCTA() {
         </p>
         <a
           href="/contact"
-          className="inline-flex items-center gap-1.5 rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px"
+          className="ctaLink inline-flex items-center gap-1.5 rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px"
           style={{
             color: "var(--foreground)",
             borderColor: "var(--surface-border)",
@@ -179,7 +179,9 @@ export default function WorkTogetherCTA() {
           z-index: -1;
         }
         .ctaUfoWrap:hover .ctaGlowHalo,
-        .ctaUfoWrap:focus-visible .ctaGlowHalo {
+        .ctaUfoWrap:focus-visible .ctaGlowHalo,
+        .ctaGroup:has(.ctaLink:hover) .ctaGlowHalo,
+        .ctaGroup:has(.ctaLink:focus-visible) .ctaGlowHalo {
           opacity: 0.75;
           transform: scale(1.45);
         }
@@ -189,11 +191,15 @@ export default function WorkTogetherCTA() {
           transition: filter 0.4s ease;
         }
         .ctaUfoWrap:hover .ctaUfoSvg,
-        .ctaUfoWrap:focus-visible .ctaUfoSvg {
+        .ctaUfoWrap:focus-visible .ctaUfoSvg,
+        .ctaGroup:has(.ctaLink:hover) .ctaUfoSvg,
+        .ctaGroup:has(.ctaLink:focus-visible) .ctaUfoSvg {
           filter: drop-shadow(0 0 38px rgba(168,85,247,0.9)) drop-shadow(0 0 70px rgba(168,85,247,0.4));
         }
         .ctaUfoWrap:hover .ctaBeamPulse,
-        .ctaUfoWrap:focus-visible .ctaBeamPulse {
+        .ctaUfoWrap:focus-visible .ctaBeamPulse,
+        .ctaGroup:has(.ctaLink:hover) .ctaBeamPulse,
+        .ctaGroup:has(.ctaLink:focus-visible) .ctaBeamPulse {
           opacity: 0.95;
         }
 
