@@ -19,9 +19,9 @@ export default function SocialLinks() {
             color: "var(--foreground)",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "var(--surface-border-hover)";
+            e.currentTarget.style.borderColor = "var(--accent-2)";
             e.currentTarget.style.backgroundColor = "var(--surface-bg-hover)";
-            e.currentTarget.style.color = "var(--accent)";
+            e.currentTarget.style.color = "var(--accent-2)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = "var(--surface-border)";

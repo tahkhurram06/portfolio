@@ -11,7 +11,10 @@ export default function Contact() {
         Get in touch
       </p>
 
-      <h1 className="mb-4 text-[clamp(28px,4.5vw,40px)] leading-tight font-extrabold tracking-tight bg-linear-to-r from-violet-600 via-purple-500 to-fuchsia-400 bg-clip-text text-transparent">
+      <h1
+        className="mb-4 text-[clamp(28px,4.5vw,40px)] leading-tight font-extrabold tracking-tight bg-clip-text text-transparent"
+        style={{ backgroundImage: "linear-gradient(to right, var(--accent), #5eead4, var(--accent-2))" }}
+      >
         Let&apos;s work together.
       </h1>
 

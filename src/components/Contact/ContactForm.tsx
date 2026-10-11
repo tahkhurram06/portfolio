@@ -177,7 +177,20 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-1 flex items-center justify-center gap-2.5 rounded-full border border-(--surface-border) bg-(--surface-bg-hover) px-6 py-2.5 text-sm font-semibold text-foreground transition-all duration-250 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+        className="mt-1 flex items-center justify-center gap-2.5 rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+        style={{
+          color: "var(--accent-2-text)",
+          borderColor: "var(--accent-2)",
+          backgroundColor: "var(--accent-2)",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = "var(--accent-2-hover)";
+          e.currentTarget.style.backgroundColor = "var(--accent-2-hover)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = "var(--accent-2)";
+          e.currentTarget.style.backgroundColor = "var(--accent-2)";
+        }}
       >
         {isSubmitting && (
           <span

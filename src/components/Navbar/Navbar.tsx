@@ -227,6 +227,14 @@ export default function Navbar() {
                 borderColor: "var(--surface-border)",
                 backgroundColor: "var(--surface-bg)",
               }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--accent-2)";
+                e.currentTarget.style.color = "var(--accent-2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--surface-border)";
+                e.currentTarget.style.color = "var(--foreground)";
+              }}
             >
               Resume
             </a>
@@ -247,9 +255,9 @@ export default function Navbar() {
               }}
             >
               <span
-                className="absolute block h-0.5 w-4 rounded-full transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+                className="absolute block h-0.5 w-4 rounded-full transition-[transform,background-color] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                 style={{
-                  backgroundColor: "var(--foreground)",
+                  backgroundColor: menuOpen ? "var(--accent-2)" : "var(--foreground)",
                   transform: menuOpen
                     ? "translateY(0) rotate(45deg)"
                     : "translateY(-5px) rotate(0deg)",
@@ -264,9 +272,9 @@ export default function Navbar() {
                 }}
               />
               <span
-                className="absolute block h-0.5 w-4 rounded-full transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+                className="absolute block h-0.5 w-4 rounded-full transition-[transform,background-color] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                 style={{
-                  backgroundColor: "var(--foreground)",
+                  backgroundColor: menuOpen ? "var(--accent-2)" : "var(--foreground)",
                   transform: menuOpen
                     ? "translateY(0) rotate(-45deg)"
                     : "translateY(5px) rotate(0deg)",
@@ -417,6 +425,14 @@ export default function Navbar() {
                 borderColor: "var(--surface-border)",
                 backgroundColor: "var(--surface-bg)",
               }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--accent-2)";
+                e.currentTarget.style.color = "var(--accent-2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--surface-border)";
+                e.currentTarget.style.color = "var(--foreground)";
+              }}
             >
               Resume
             </a>
@@ -441,6 +457,14 @@ export default function Navbar() {
           backgroundColor: "var(--nav-bg-scrolled)",
           boxShadow: "var(--shadow-nav)",
         }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = "var(--accent-2)";
+          e.currentTarget.style.color = "var(--accent-2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = "var(--nav-border)";
+          e.currentTarget.style.color = "var(--foreground)";
+        }}
       >
         <svg
           width="15"
@@ -452,13 +476,13 @@ export default function Navbar() {
         >
           <path
             d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"
-            stroke="var(--accent)"
+            stroke="currentColor"
             strokeWidth="1.7"
             strokeLinejoin="round"
           />
           <path
             d="M14 2v6h6"
-            stroke="var(--accent)"
+            stroke="currentColor"
             strokeWidth="1.7"
             strokeLinejoin="round"
           />

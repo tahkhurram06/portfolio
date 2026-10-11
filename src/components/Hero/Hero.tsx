@@ -17,13 +17,13 @@ export default function Hero() {
           My name is
         </p>
 
-        <h1 className="mb-5 bg-linear-to-r from-violet-600 via-purple-500 to-fuchsia-400 bg-clip-text text-[clamp(56px,9vw,104px)] leading-none font-extrabold tracking-tight text-transparent">
+        <h1 className="mb-5 bg-clip-text text-[clamp(56px,9vw,104px)] leading-none font-extrabold tracking-tight text-transparent" style={{ backgroundImage: "linear-gradient(to right, var(--accent), var(--accent-mid), var(--accent-2))" }}>
           Taha.
         </h1>
 
         <p
           className="mb-3.5 text-[clamp(20px,2.4vw,26px)] font-semibold"
-          style={{ color: "var(--foreground)" }}
+          style={{ color: "var(--accent-2)" }}
         >
           Full Stack Developer
         </p>
@@ -42,17 +42,17 @@ export default function Hero() {
 
       <div className="flex items-center justify-center min-[1280px]:flex-1">
         <div className="relative flex aspect-square w-[min(300px,78vw)] items-center justify-center min-[481px]:w-[min(420px,80vw)]">
-          <div className="absolute inset-0 animate-ring-spin rounded-full border-[2.5px] border-purple-500/30 border-t-fuchsia-400 shadow-[0_0_18px_2px_rgba(232,121,249,0.35)]">
-            <span className="absolute -top-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-fuchsia-300 shadow-[0_0_10px_3px_rgba(232,121,249,0.8)]" />
+          <div className="absolute inset-0 animate-ring-spin rounded-full border-[2.5px] shadow-[0_0_18px_2px_rgba(45,212,191,0.35)]" style={{ borderColor: "color-mix(in srgb, var(--accent) 30%, transparent)", borderTopColor: "var(--accent-2)" }}>
+            <span className="absolute -top-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full shadow-[0_0_10px_3px_rgba(242,97,63,0.8)]" style={{ backgroundColor: "var(--accent-2)" }} />
           </div>
-          <div className="absolute inset-[9%] animate-ring-spin-reverse rounded-full border-2 border-purple-500/22 border-r-purple-300 shadow-[0_0_14px_1px_rgba(168,85,247,0.3)]">
-            <span className="absolute top-1/2 -right-0.75 h-2 w-2 -translate-y-1/2 rounded-full bg-purple-300 shadow-[0_0_9px_2px_rgba(168,85,247,0.75)]" />
+          <div className="absolute inset-[9%] animate-ring-spin-reverse rounded-full border-2 shadow-[0_0_14px_1px_rgba(13,148,136,0.3)]" style={{ borderColor: "color-mix(in srgb, var(--accent-2) 22%, transparent)", borderRightColor: "var(--accent)" }}>
+            <span className="absolute top-1/2 -right-0.75 h-2 w-2 -translate-y-1/2 rounded-full shadow-[0_0_9px_2px_rgba(13,148,136,0.75)]" style={{ backgroundColor: "var(--accent)" }} />
           </div>
-          <div className="absolute inset-[18%] animate-ring-spin-slow rounded-full border-[1.5px] border-purple-500/18 border-b-violet-200/90">
-            <span className="absolute -bottom-0.75 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-violet-200 shadow-[0_0_8px_2px_rgba(233,213,255,0.7)]" />
+          <div className="absolute inset-[18%] animate-ring-spin-slow rounded-full border-[1.5px] shadow-[0_0_12px_1px_rgba(242,97,63,0.4)]" style={{ borderColor: "color-mix(in srgb, var(--accent) 18%, transparent)", borderBottomColor: "var(--accent-2)" }}>
+            <span className="absolute -bottom-0.75 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full shadow-[0_0_8px_2px_rgba(242,97,63,0.7)]" style={{ backgroundColor: "var(--accent-2)" }} />
           </div>
 
-          <div className="relative aspect-square w-[62%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(168,85,247,0.35),0_0_100px_rgba(168,85,247,0.15)]">
+          <div className="relative aspect-square w-[62%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(13,148,136,0.35),0_0_100px_rgba(242,97,63,0.12)]">
             <Image
               src={HeroImg}
               alt="Taha"
@@ -64,15 +64,15 @@ export default function Hero() {
           </div>
 
           <span
-            className="absolute top-[4%] right-[10%] h-2.5 w-2.5 animate-float rounded-full shadow-[0_0_10px_3px_rgba(232,121,249,0.7)]"
+            className="absolute top-[4%] right-[10%] h-2.5 w-2.5 animate-float rounded-full shadow-[0_0_10px_3px_rgba(45,212,191,0.7)]"
             style={{ backgroundColor: "var(--accent-dot)" }}
           />
           <span
-            className="absolute right-[2%] bottom-[12%] h-2.5 w-2.5 animate-float-delay-1 rounded-full shadow-[0_0_10px_3px_rgba(232,121,249,0.7)]"
+            className="absolute right-[2%] bottom-[12%] h-2.5 w-2.5 animate-float-delay-1 rounded-full shadow-[0_0_10px_3px_rgba(242,97,63,0.65)]"
             style={{ backgroundColor: "var(--accent-dot)" }}
           />
           <span
-            className="absolute bottom-[4%] left-[14%] h-2.5 w-2.5 animate-float-delay-2 rounded-full shadow-[0_0_10px_3px_rgba(232,121,249,0.7)]"
+            className="absolute bottom-[4%] left-[14%] h-2.5 w-2.5 animate-float-delay-2 rounded-full shadow-[0_0_10px_3px_rgba(45,212,191,0.7)]"
             style={{ backgroundColor: "var(--accent-dot)" }}
           />
         </div>

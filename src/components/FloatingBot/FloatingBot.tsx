@@ -40,24 +40,24 @@ export default function FloatingBotUFO() {
         <div className="botTilt">
           <div className="botWobble">
             <svg width="150" height="130" viewBox="0 0 150 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-              style={{ filter: "drop-shadow(0 0 24px rgba(168,85,247,0.55))" }}>
+              style={{ filter: "drop-shadow(0 0 24px rgba(45,212,191,0.55))" }}>
               <defs>
                 <linearGradient id="ufoBeam2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#c084fc" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#5eead4" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient id="ufoDome2" cx="38%" cy="28%" r="80%">
-                  <stop offset="0%" stopColor="#f3e8ff" />
-                  <stop offset="45%" stopColor="#c084fc" />
-                  <stop offset="100%" stopColor="#5b21a0" />
+                  <stop offset="0%" stopColor="#f0fdfa" />
+                  <stop offset="45%" stopColor="#5eead4" />
+                  <stop offset="100%" stopColor="#0f766e" />
                 </radialGradient>
                 <linearGradient id="ufoBody2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#33204d" />
-                  <stop offset="100%" stopColor="#0f081a" />
+                  <stop offset="0%" stopColor="#163832" />
+                  <stop offset="100%" stopColor="#081a16" />
                 </linearGradient>
                 <radialGradient id="ufoGlow" cx="50%" cy="0%" r="100%">
-                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0.5" />
-                  <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
                 </radialGradient>
               </defs>
 
@@ -70,12 +70,12 @@ export default function FloatingBotUFO() {
 
               <g className="botHover">
                 <ellipse cx="75" cy="60" rx="14" ry="5" fill="#000" opacity="0.25" />
-                <ellipse cx="75" cy="60" rx="62" ry="15" fill="url(#ufoBody2)" stroke="#c4b5fd" strokeWidth="2" />
-                <ellipse cx="75" cy="52" rx="40" ry="9" fill="none" stroke="#3b2560" strokeWidth="1" opacity="0.6" />
+                <ellipse cx="75" cy="60" rx="62" ry="15" fill="url(#ufoBody2)" stroke="#2dd4bf" strokeWidth="2" />
+                <ellipse cx="75" cy="52" rx="40" ry="9" fill="none" stroke="#085041" strokeWidth="1" opacity="0.6" />
 
-                <circle cx="75" cy="40" r="26" fill="url(#ufoDome2)" stroke="#e9d5ff" strokeWidth="1.5" />
+                <circle cx="75" cy="40" r="26" fill="url(#ufoDome2)" stroke="#f0fdfa" strokeWidth="1.5" />
                 <ellipse cx="63" cy="30" rx="9" ry="5.5" fill="#ffffff" opacity="0.35" />
-                <ellipse cx="75" cy="40" rx="26" ry="26" fill="none" stroke="#f3e8ff" strokeWidth="0.5" opacity="0.4" className="botDomeShimmer" />
+                <ellipse cx="75" cy="40" rx="26" ry="26" fill="none" stroke="#f0fdfa" strokeWidth="0.5" opacity="0.4" className="botDomeShimmer" />
 
                 {[0, 1, 2, 3, 4, 5, 6].map((i) => {
                   const x = 24 + i * 17;
@@ -86,7 +86,7 @@ export default function FloatingBotUFO() {
                       cx={x}
                       cy={y}
                       r="3"
-                      fill="#e9d5ff"
+                      fill="#f0fdfa"
                       className="botChaseLight"
                       style={{ animationDelay: `${i * 0.18}s` }}
                     />
@@ -209,9 +209,9 @@ export default function FloatingBotUFO() {
           font-size: 30px;
           font-weight: 700;
           letter-spacing: 0.01em;
-          /* Light mode default: dark, high-contrast foreground color with
-             a soft purple glow — the original near-white color below was
-             unreadable against the light theme's near-white background. */
+          /* Light mode default: foreground color with a soft teal glow —
+             the near-white color below was unreadable against the light
+             theme's near-white background. */
           color: var(--foreground);
           text-shadow:
             0 0 14px color-mix(in srgb, var(--accent) 45%, transparent),
@@ -221,8 +221,8 @@ export default function FloatingBotUFO() {
           /* Original bright glowing look, kept for the dark theme where
              the near-white color has plenty of contrast against the
              near-black background. */
-          color: #f3e8ff;
-          text-shadow: 0 0 14px rgba(168,85,247,1), 0 0 34px rgba(168,85,247,0.65), 0 0 60px rgba(168,85,247,0.4);
+          color: #f0fdfa;
+          text-shadow: 0 0 14px rgba(45,212,191,1), 0 0 34px rgba(45,212,191,0.65), 0 0 60px rgba(45,212,191,0.4);
         }
 
         @media (max-width: 640px) {

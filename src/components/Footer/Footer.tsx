@@ -42,7 +42,9 @@ export default function Footer() {
           <div className="footerFloat footerFloatDelay flex flex-col items-center gap-3 min-[801px]:items-end">
             <SocialLinks />
             <p className="text-[12px]" style={{ color: "var(--muted)" }}>
-              © {year} Taha — built with Next.js and Tailwind
+              © {year}{" "}
+              <span style={{ color: "var(--accent-2)" }}>Taha</span> — built
+              with Next.js and Tailwind
             </p>
           </div>
         </div>
@@ -62,22 +64,22 @@ export default function Footer() {
         .footerWaveBack {
           top: 4px;
           opacity: 0.35;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='64' viewBox='0 0 360 64'%3E%3Cpath d='M0,28 Q90,58 180,28 T360,28 L360,64 L0,64 Z' fill='%237c3aed'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='64' viewBox='0 0 360 64'%3E%3Cpath d='M0,28 Q90,58 180,28 T360,28 L360,64 L0,64 Z' fill='%230d9488'/%3E%3C/svg%3E");
           animation: footerWaveDriftBack 14s linear infinite;
         }
         .footerWaveFront {
           top: 16px;
           opacity: 0.55;
           background-size: 300px 54px;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='54' viewBox='0 0 300 54'%3E%3Cpath d='M0,24 Q75,50 150,24 T300,24 L300,54 L0,54 Z' fill='%23a855f7'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='54' viewBox='0 0 300 54'%3E%3Cpath d='M0,24 Q75,50 150,24 T300,24 L300,54 L0,54 Z' fill='%232dd4bf'/%3E%3C/svg%3E");
           animation: footerWaveDriftFront 9s linear infinite reverse;
         }
         .dark .footerWaveBack {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='64' viewBox='0 0 360 64'%3E%3Cpath d='M0,28 Q90,58 180,28 T360,28 L360,64 L0,64 Z' fill='%233b1e6e'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='64' viewBox='0 0 360 64'%3E%3Cpath d='M0,28 Q90,58 180,28 T360,28 L360,64 L0,64 Z' fill='%23085041'/%3E%3C/svg%3E");
           opacity: 0.5;
         }
         .dark .footerWaveFront {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='54' viewBox='0 0 300 54'%3E%3Cpath d='M0,24 Q75,50 150,24 T300,24 L300,54 L0,54 Z' fill='%23a855f7'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='54' viewBox='0 0 300 54'%3E%3Cpath d='M0,24 Q75,50 150,24 T300,24 L300,54 L0,54 Z' fill='%232dd4bf'/%3E%3C/svg%3E");
           opacity: 0.6;
         }
 

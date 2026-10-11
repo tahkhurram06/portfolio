@@ -73,7 +73,7 @@ export default function ProjectCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className={`rounded-full bg-[color-mix(in_srgb,var(--accent)_16%,transparent)] text-(--accent) ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"}`}
+                className={`rounded-full bg-[color-mix(in_srgb,var(--accent-2)_16%,transparent)] text-(--accent-2) ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]"}`}
               >
                 {tag}
               </span>
@@ -85,7 +85,7 @@ export default function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${title} on GitHub`}
-                className={`group/gh relative z-10 ml-auto flex items-center overflow-hidden rounded-full border border-(--surface-border) bg-(--surface-bg) text-foreground transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:border-(--surface-border-hover) hover:bg-(--surface-bg-hover) hover:text-(--accent) hover:pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background ${compact ? "h-6 w-6 hover:w-auto" : "h-7 w-7 hover:w-auto"}`}
+                className={`group/gh relative z-10 ml-auto flex items-center overflow-hidden rounded-full border border-(--surface-border) bg-(--surface-bg) text-foreground transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:border-(--accent-2) hover:bg-(--surface-bg-hover) hover:text-(--accent-2) hover:pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background ${compact ? "h-6 w-6 hover:w-auto" : "h-7 w-7 hover:w-auto"}`}
               >
                 <span
                   className={`flex shrink-0 items-center justify-center ${compact ? "h-6 w-6" : "h-7 w-7"}`}

@@ -27,7 +27,10 @@ export default function ContactInfo() {
       </div>
 
       <div>
-        <p className="mb-3 text-[12.5px] font-bold text-(--accent)">
+        <p
+          className="mb-3 text-[12.5px] font-bold"
+          style={{ color: "var(--accent-2)" }}
+        >
           Elsewhere
         </p>
         <SocialLinks />

@@ -18,7 +18,7 @@ export const projects: Project[] = [
     description:
       "Mockup of a student portal LMS, inspired by SMIT's actual system.",
     tags: ["Next.js", "TypeScript"],
-    gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
+    gradient: "linear-gradient(135deg, #0d9488, #2dd4bf)",
     href: "https://smit-portal-mockup.vercel.app/",
     githubHref: "https://github.com/tahkhurram06/smit-portal-mockup",
     image: "/projects/smit-portal.png",
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description:
       "Browse mobile phone models with specs and side-by-side comparisons.",
     tags: ["React", "Vite"], // adjust to whatever you actually used
-    gradient: "linear-gradient(135deg, #6d28d9, #d8b4fe)",
+    gradient: "linear-gradient(135deg, #0f766e, #2dd4bf)",
     href: "https://compare-ex.vercel.app",
     githubHref: "https://github.com/tahkhurram06/compare-ex", // optional, if public
     image: "/projects/compare-ex.png",
@@ -37,24 +37,9 @@ export const projects: Project[] = [
     title: "SHOP.CO",
     description: "Fashion storefront built with React and Vite.",
     tags: ["React", "Vite"],
-    gradient: "linear-gradient(135deg, #5b21a0, #c084fc)",
+    gradient: "linear-gradient(135deg, #0d9488, #5eead4)",
     href: "https://shopco-project00.netlify.app/",
     githubHref: "https://github.com/tahkhurram06/Shop.co",
     image: "/projects/shop.co.png",
-  },
-  {
-    title: "Date-night app",
-    description: "A narrative multi-screen experience, built vanilla.",
-    tags: ["HTML", "JS"],
-    gradient: "linear-gradient(135deg, #7e22ce, #f3e8ff)",
-    labelColor: "rgba(10,4,16,0.75)",
-    href: "#",
-  },
-  {
-    title: "AURÉLIA",
-    description: "Jewelry e-commerce with a build-your-ring flow.",
-    tags: ["Next.js", "TypeScript"],
-    gradient: "linear-gradient(135deg, #3b1e6e, #7c3aed)",
-    href: "#",
   },
 ];

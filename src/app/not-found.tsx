@@ -4,10 +4,25 @@ export default function NotFound() {
   return (
     <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-35 pb-24 text-center sm:px-8 min-[901px]:pt-40">
       <div className="animate-fade-up relative flex aspect-square w-40 shrink-0 items-center justify-center sm:w-48">
-        <div className="absolute inset-0 animate-ring-spin rounded-full border-[2.5px] border-purple-500/30 border-t-fuchsia-400 shadow-[0_0_18px_2px_rgba(232,121,249,0.35)]" />
-        <div className="absolute inset-[10%] animate-ring-spin-reverse rounded-full border-2 border-purple-500/22 border-r-purple-300 shadow-[0_0_14px_1px_rgba(168,85,247,0.3)]" />
+        <div
+          className="absolute inset-0 animate-ring-spin rounded-full border-[2.5px] shadow-[0_0_18px_2px_rgba(45,212,191,0.35)]"
+          style={{
+            borderColor: "color-mix(in srgb, var(--accent) 30%, transparent)",
+            borderTopColor: "var(--accent-2)",
+          }}
+        />
+        <div
+          className="absolute inset-[10%] animate-ring-spin-reverse rounded-full border-2 shadow-[0_0_14px_1px_rgba(13,148,136,0.3)]"
+          style={{
+            borderColor: "color-mix(in srgb, var(--accent) 22%, transparent)",
+            borderRightColor: "var(--accent)",
+          }}
+        />
 
-        <span className="bg-linear-to-r from-violet-600 via-purple-500 to-fuchsia-400 bg-clip-text text-[64px] leading-none font-extrabold text-transparent">
+        <span
+          className="bg-clip-text text-[64px] leading-none font-extrabold text-transparent"
+          style={{ backgroundImage: "linear-gradient(to right, var(--accent), var(--accent-mid), var(--accent-2))" }}
+        >
           404
         </span>
       </div>

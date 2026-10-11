@@ -46,9 +46,27 @@ export default function PageLoader() {
       aria-hidden="true"
     >
       <div className="relative flex aspect-square w-28 items-center justify-center sm:w-32">
-        <div className="absolute inset-0 animate-ring-spin rounded-full border-[2.5px] border-purple-500/30 border-t-fuchsia-400 shadow-[0_0_18px_2px_rgba(232,121,249,0.35)]" />
-        <div className="absolute inset-[12%] animate-ring-spin-reverse rounded-full border-2 border-purple-500/22 border-r-purple-300 shadow-[0_0_14px_1px_rgba(168,85,247,0.3)]" />
-        <div className="absolute inset-[24%] animate-ring-spin-slow rounded-full border-[1.5px] border-purple-500/18 border-b-violet-200/90" />
+        <div
+          className="absolute inset-0 animate-ring-spin rounded-full border-[2.5px] shadow-[0_0_18px_2px_rgba(45,212,191,0.35)]"
+          style={{
+            borderColor: "color-mix(in srgb, var(--accent) 30%, transparent)",
+            borderTopColor: "var(--accent-2)",
+          }}
+        />
+        <div
+          className="absolute inset-[12%] animate-ring-spin-reverse rounded-full border-2 shadow-[0_0_14px_1px_rgba(13,148,136,0.3)]"
+          style={{
+            borderColor: "color-mix(in srgb, var(--accent-2) 22%, transparent)",
+            borderRightColor: "var(--accent)",
+          }}
+        />
+        <div
+          className="absolute inset-[24%] animate-ring-spin-slow rounded-full border-[1.5px] shadow-[0_0_12px_1px_rgba(242,97,63,0.4)]"
+          style={{
+            borderColor: "color-mix(in srgb, var(--accent) 18%, transparent)",
+            borderBottomColor: "var(--accent-2)",
+          }}
+        />
 
         <Logo className="h-12 w-auto animate-fade-up sm:h-14" />
       </div>

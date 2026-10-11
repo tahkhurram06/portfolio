@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { projects } from "../../lib/projects";
 import ProjectCard from "./ProjectCard";
@@ -72,14 +74,22 @@ export default function Projects({
         <div className="mt-8 flex justify-center">
           <Link
             href="/projects"
-            className="rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="viewAllBtn rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-250 hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             style={{
               color: "var(--foreground)",
               borderColor: "var(--surface-border)",
               backgroundColor: "var(--surface-bg)",
             }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "var(--accent-2)";
+              e.currentTarget.style.color = "var(--accent-2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "var(--surface-border)";
+              e.currentTarget.style.color = "var(--foreground)";
+            }}
           >
-            View all projects
+            View all projects <span aria-hidden="true">→</span>
           </Link>
         </div>
       )}

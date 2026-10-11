@@ -160,10 +160,13 @@ export default function TimelineItem({
       <span
         className="absolute top-1 -left-7.25 h-3 w-3 rounded-full sm:-left-8.25"
         style={{
-          backgroundColor: "var(--accent)",
+          // Lights up coral once the flowing teal line reaches it
+          // (proximity -> 1), resting as teal otherwise — the marker
+          // "catching" the line reads as a deliberate accent moment.
+          backgroundColor: markerGlow > 0.6 ? "var(--accent-2)" : "var(--accent)",
           opacity: markerOpacity,
           transform: `scale(${markerScale})`,
-          boxShadow: `0 0 ${8 + markerGlow * 16}px ${2 + markerGlow * 3}px color-mix(in srgb, var(--accent) ${45 + markerGlow * 35}%, transparent)`,
+          boxShadow: `0 0 ${8 + markerGlow * 16}px ${2 + markerGlow * 3}px color-mix(in srgb, ${markerGlow > 0.6 ? "var(--accent-2)" : "var(--accent)"} ${45 + markerGlow * 35}%, transparent)`,
           transitionProperty: "transform, opacity, box-shadow",
           transitionDuration: settled
             ? "240ms, 240ms, 240ms"
@@ -180,7 +183,7 @@ export default function TimelineItem({
           revealed ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0"
         }`}
         style={{
-          color: "var(--accent)",
+          color: "var(--accent-2)",
           transitionDelay: revealed ? `${delay + 220}ms` : "0ms",
         }}
       >
