@@ -21,7 +21,10 @@ export default function NotFound() {
 
         <span
           className="bg-clip-text text-[64px] leading-none font-extrabold text-transparent"
-          style={{ backgroundImage: "linear-gradient(to right, var(--accent), var(--accent-mid), var(--accent-2))" }}
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, var(--accent), var(--accent-mid), var(--accent-2))",
+          }}
         >
           404
         </span>
@@ -38,7 +41,8 @@ export default function NotFound() {
         className="animate-fade-up animate-delay-1 mb-8 max-w-100 text-[15.5px] leading-relaxed"
         style={{ color: "var(--muted)" }}
       >
-        The page you&apos;re looking for doesn&apos;t exist or may have been moved.
+        The page you&apos;re looking for doesn&apos;t exist or may have been
+        moved.
       </p>
 
       <Link

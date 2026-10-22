@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaFacebook } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 
 export type SocialLink = {
@@ -10,6 +10,6 @@ export type SocialLink = {
 export const socialLinks: SocialLink[] = [
   { name: "GitHub", href: "https://github.com/tahkhurram06", icon: FaGithub },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/taha-khurram-7219b43b3/", icon: FaLinkedin },
-  { name: "Instagram", href: "https://www.instagram.com/im_bloody_/", icon: FaInstagram },
+  { name: "WhatsApp", href: "https://wa.me/923146047157", icon: FaWhatsapp },
   { name: "Facebook", href: "https://www.facebook.com/taha.khurram.214325", icon: FaFacebook },
 ];
