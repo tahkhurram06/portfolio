@@ -10,6 +10,8 @@ import {
   SiGit,
   SiGithub,
   SiNodedotjs,
+  SiExpress,
+  SiRedux,
 } from "react-icons/si";
 
 export type Skill = {
@@ -29,4 +31,6 @@ export const skills: Skill[] = [
   { name: "Git", icon: SiGit, color: "#F05032" },
   { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
   { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+  { name: "Express", icon: SiExpress, color: "#FFFFFF" },
+  { name: "Redux Toolkit", icon: SiRedux, color: "#764ABC" },
 ];
