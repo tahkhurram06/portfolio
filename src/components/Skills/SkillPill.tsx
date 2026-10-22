@@ -7,9 +7,19 @@ type SkillPillProps = {
   name: string;
   icon: IconType;
   color: string;
+  /** Icons whose real-world logo is a mono glyph (Next.js, GitHub,
+   * Express) rather than a colored mark — these get a neutral tile
+   * with a theme-reactive glyph color instead of being dropped into
+   * a solid color swatch like the brand-colored icons. */
+  mono?: boolean;
 };
 
-export default function SkillPill({ name, icon: Icon, color }: SkillPillProps) {
+export default function SkillPill({
+  name,
+  icon: Icon,
+  color,
+  mono = false,
+}: SkillPillProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -28,10 +38,16 @@ export default function SkillPill({ name, icon: Icon, color }: SkillPillProps) {
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className="flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-250"
-        style={{ backgroundColor: color }}
+        className="flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-250"
+        style={{
+          backgroundColor: mono ? "var(--surface-bg)" : color,
+          borderColor: mono ? "var(--surface-border)" : "transparent",
+        }}
       >
-        <Icon size={24} style={{ color: "#0a0410" }} />
+        <Icon
+          size={24}
+          style={{ color: mono ? "var(--foreground)" : "#0a0410" }}
+        />
       </div>
 
       <span

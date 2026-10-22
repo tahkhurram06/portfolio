@@ -20,6 +20,7 @@ export default function Skills() {
             name={skill.name}
             icon={skill.icon}
             color={skill.color}
+            mono={skill.mono}
           />
         ))}
       </div>

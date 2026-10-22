@@ -40,16 +40,16 @@ export default function FloatingBotUFO() {
         <div className="botTilt">
           <div className="botWobble">
             <svg width="150" height="130" viewBox="0 0 150 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-              style={{ filter: "drop-shadow(0 0 24px rgba(45,212,191,0.55))" }}>
+              style={{ filter: "drop-shadow(0 0 24px rgba(45,212,191,0.55)) drop-shadow(0 0 16px rgba(242,97,63,0.22))" }}>
               <defs>
                 <linearGradient id="ufoBeam2" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#5eead4" stopOpacity="0.6" />
                   <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient id="ufoDome2" cx="38%" cy="28%" r="80%">
-                  <stop offset="0%" stopColor="#f0fdfa" />
-                  <stop offset="45%" stopColor="#5eead4" />
-                  <stop offset="100%" stopColor="#0f766e" />
+                  <stop offset="0%" stopColor="#fff5f0" />
+                  <stop offset="40%" stopColor="#f2613f" />
+                  <stop offset="100%" stopColor="#8a2e14" />
                 </radialGradient>
                 <linearGradient id="ufoBody2" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#163832" />
@@ -59,6 +59,11 @@ export default function FloatingBotUFO() {
                   <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.5" />
                   <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
                 </radialGradient>
+                <linearGradient id="ufoRim2" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#2dd4bf" />
+                  <stop offset="55%" stopColor="#5eead4" />
+                  <stop offset="100%" stopColor="#f2613f" />
+                </linearGradient>
               </defs>
 
               <polygon
@@ -70,7 +75,7 @@ export default function FloatingBotUFO() {
 
               <g className="botHover">
                 <ellipse cx="75" cy="60" rx="14" ry="5" fill="#000" opacity="0.25" />
-                <ellipse cx="75" cy="60" rx="62" ry="15" fill="url(#ufoBody2)" stroke="#2dd4bf" strokeWidth="2" />
+                <ellipse cx="75" cy="60" rx="62" ry="15" fill="url(#ufoBody2)" stroke="url(#ufoRim2)" strokeWidth="2" />
                 <ellipse cx="75" cy="52" rx="40" ry="9" fill="none" stroke="#085041" strokeWidth="1" opacity="0.6" />
 
                 <circle cx="75" cy="40" r="26" fill="url(#ufoDome2)" stroke="#f0fdfa" strokeWidth="1.5" />
@@ -86,7 +91,7 @@ export default function FloatingBotUFO() {
                       cx={x}
                       cy={y}
                       r="3"
-                      fill="#f0fdfa"
+                      fill={i % 2 === 0 ? "#f0fdfa" : "#f2613f"}
                       className="botChaseLight"
                       style={{ animationDelay: `${i * 0.18}s` }}
                     />
@@ -209,20 +214,18 @@ export default function FloatingBotUFO() {
           font-size: 30px;
           font-weight: 700;
           letter-spacing: 0.01em;
-          /* Light mode default: foreground color with a soft teal glow —
-             the near-white color below was unreadable against the light
-             theme's near-white background. */
-          color: var(--foreground);
+          /* Light mode default: coral with a soft coral glow — keeps
+             enough contrast against the light theme's pale background. */
+          color: var(--accent-2);
           text-shadow:
-            0 0 14px color-mix(in srgb, var(--accent) 45%, transparent),
-            0 0 30px color-mix(in srgb, var(--accent) 22%, transparent);
+            0 0 14px color-mix(in srgb, var(--accent-2) 45%, transparent),
+            0 0 30px color-mix(in srgb, var(--accent-2) 22%, transparent);
         }
         .dark .botGreetText {
-          /* Original bright glowing look, kept for the dark theme where
-             the near-white color has plenty of contrast against the
-             near-black background. */
-          color: #f0fdfa;
-          text-shadow: 0 0 14px rgba(45,212,191,1), 0 0 34px rgba(45,212,191,0.65), 0 0 60px rgba(45,212,191,0.4);
+          /* Brighter coral for the dark theme, with a stronger glow to
+             match the original's punch against the near-black background. */
+          color: #ff7a50;
+          text-shadow: 0 0 14px rgba(255,122,80,1), 0 0 34px rgba(255,122,80,0.65), 0 0 60px rgba(255,122,80,0.4);
         }
 
         @media (max-width: 640px) {

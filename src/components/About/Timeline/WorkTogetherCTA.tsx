@@ -38,13 +38,18 @@ export default function WorkTogetherCTA() {
                 <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0" />
               </linearGradient>
               <radialGradient id="ctaDome" cx="38%" cy="28%" r="80%">
-                <stop offset="0%" stopColor="#f0fdfa" />
-                <stop offset="45%" stopColor="#5eead4" />
-                <stop offset="100%" stopColor="#0f766e" />
+                <stop offset="0%" stopColor="#fff5f0" />
+                <stop offset="40%" stopColor="#f2613f" />
+                <stop offset="100%" stopColor="#8a2e14" />
               </radialGradient>
               <linearGradient id="ctaBody" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#163832" />
                 <stop offset="100%" stopColor="#081a16" />
+              </linearGradient>
+              <linearGradient id="ctaRim" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#2dd4bf" />
+                <stop offset="55%" stopColor="#5eead4" />
+                <stop offset="100%" stopColor="#f2613f" />
               </linearGradient>
             </defs>
 
@@ -69,7 +74,7 @@ export default function WorkTogetherCTA() {
                 rx="54"
                 ry="13"
                 fill="url(#ctaBody)"
-                stroke="#2dd4bf"
+                stroke="url(#ctaRim)"
                 strokeWidth="1.6"
               />
               <ellipse
@@ -99,6 +104,14 @@ export default function WorkTogetherCTA() {
                 fill="#ffffff"
                 opacity="0.35"
               />
+              <ellipse
+                cx="80"
+                cy="48"
+                rx="9"
+                ry="6"
+                fill="#f2613f"
+                opacity="0.18"
+              />
 
               {[0, 1, 2, 3, 4, 5].map((i) => {
                 const x = 24 + i * 15;
@@ -109,7 +122,7 @@ export default function WorkTogetherCTA() {
                     cx={x}
                     cy={y}
                     r="2.6"
-                    fill="#f0fdfa"
+                    fill={i % 2 === 0 ? "#f0fdfa" : "#f2613f"}
                     className="ctaChaseLight"
                     style={{ animationDelay: `${i * 0.18}s` }}
                   />
@@ -187,14 +200,14 @@ export default function WorkTogetherCTA() {
         }
 
         .ctaUfoSvg {
-          filter: drop-shadow(0 0 20px rgba(45,212,191,0.5));
+          filter: drop-shadow(0 0 20px rgba(45,212,191,0.5)) drop-shadow(0 0 14px rgba(242,97,63,0.18));
           transition: filter 0.4s ease;
         }
         .ctaUfoWrap:hover .ctaUfoSvg,
         .ctaUfoWrap:focus-visible .ctaUfoSvg,
         .ctaGroup:has(.ctaLink:hover) .ctaUfoSvg,
         .ctaGroup:has(.ctaLink:focus-visible) .ctaUfoSvg {
-          filter: drop-shadow(0 0 38px rgba(45,212,191,0.9)) drop-shadow(0 0 70px rgba(45,212,191,0.4));
+          filter: drop-shadow(0 0 38px rgba(45,212,191,0.9)) drop-shadow(0 0 70px rgba(45,212,191,0.4)) drop-shadow(0 0 26px rgba(242,97,63,0.3));
         }
         .ctaUfoWrap:hover .ctaBeamPulse,
         .ctaUfoWrap:focus-visible .ctaBeamPulse,
