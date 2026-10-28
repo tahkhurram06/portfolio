@@ -10,11 +10,8 @@ export default function Bio() {
         <div className="absolute inset-[8%] animate-ring-spin-reverse rounded-full border-2 shadow-[0_0_14px_1px_rgba(13,148,136,0.3)]" style={{ borderColor: "color-mix(in srgb, var(--accent) 22%, transparent)", borderRightColor: "var(--accent)" }}>
           <span className="absolute top-1/2 -right-0.75 h-2 w-2 -translate-y-1/2 rounded-full shadow-[0_0_9px_2px_rgba(13,148,136,0.75)]" style={{ backgroundColor: "var(--accent)" }} />
         </div>
-        <div className="absolute inset-[16%] animate-ring-spin-slow rounded-full border-[1.5px]" style={{ borderColor: "color-mix(in srgb, var(--accent) 18%, transparent)", borderBottomColor: "#5eead4" }}>
-          <span className="absolute -bottom-0.75 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#5eead4] shadow-[0_0_8px_2px_rgba(94,234,212,0.7)]" />
-        </div>
 
-        <div className="relative aspect-square w-[64%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(13,148,136,0.35),0_0_100px_rgba(242,97,63,0.12)] transition-transform duration-500 hover:scale-[1.04]">
+        <div className="relative aspect-square w-[78%] overflow-hidden rounded-full shadow-[0_0_40px_rgba(13,148,136,0.35),0_0_100px_rgba(242,97,63,0.12)] transition-transform duration-500 hover:scale-[1.04]">
           <BuildGraphAnimation />
         </div>
       </div>
