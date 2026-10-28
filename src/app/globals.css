@@ -457,7 +457,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.055);
+  background: var(--surface-bg);
   border: 2px solid color-mix(in srgb, var(--accent) 30%, transparent);
   backdrop-filter: blur(5px);
   will-change: transform, opacity, box-shadow, border-color;
